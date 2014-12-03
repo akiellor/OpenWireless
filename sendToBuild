@@ -29,4 +29,6 @@ echo "pushing routerapi to build..."
 cp -rp routerapi cerowrt/files/www/cgi-bin/
 
 echo "building lighttpd config..."
+mkdir -p cerowrt/files/etc/lighttpd/conf.d
 cat lighttpd/router.properties | scripts/template lighttpd/lighttpd.conf.template > cerowrt/files/etc/lighttpd/lighttpd.conf
+cp -rp lighttpd/logs.conf cerowrt/files/etc/lighttpd/conf.d/logs.conf

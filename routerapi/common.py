@@ -66,6 +66,7 @@ def exception_handler(exc_type, exc_obj, exc_tb):
     print 'Content-Type: application/json'
     print
     print json.JSONEncoder().encode({"error": error_text})
+    sys.stderr.write(exc_obj)
     sys.exit(0)
 
 sys.excepthook = exception_handler

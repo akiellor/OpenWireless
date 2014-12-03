@@ -28,7 +28,9 @@ mkdir -p $FILES
 
 cp -rp $ROOT/etc $FILES/
 
+mkdir $FILES/etc/lighttpd/conf.d
 $ROOT/scripts/template $ROOT/lighttpd/lighttpd.conf.template > $FILES/etc/lighttpd/lighttpd.conf < $ROOT/lighttpd/router.properties
+cp $ROOT/lighttpd/logs.conf $FILES/etc/lighttpd/conf.d/logs.conf
 
 cp -rp $ROOT/lib $FILES/
 
